@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <link rel="icon" href="..//Images/rh_logo.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="..//Images/RoomieHubFinalLogo-1.png" alt="RoomieHub Logo">
+        </div>
+        <nav class="wp-block-navigation ">
+       
+                <a href="index.html">Home</a>
+                <a href="roomates.html">Roommates</a>
+       
+             
+        </nav>
+    </header>
+    <main>
+        <div class="intro">
+            <div class="phone">
+                <img src="..//Images/demo.webp" alt="Demo Image">
+            </div>
+            <div class="first">
+                <h1>Roommates made easy</h1>
+                <p>Be among the first to access the platform</p>
+                <button id="wait">Join App Wait List</button>
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-block">
+                <img src="..//Images/rh_logo.webp" alt="rh logo">
+                <h3>Roomie Finding</h3>
+                <p>Connect with who’s out there! Chat with potential roomies and get to know each other. Bond over
+                    shared interests, lifestyles, music taste, &amp; much more.</p>
+            </div>
+            <div class="info-block">
+                <img src="..//Images/rh_logo.webp" alt="rh logo">
+                <h3>Roomie Living</h3>
+                <p>Good communication is essential for good roommate relationships! Share tasks, announcements,
+                    reminders, grocery lists, &amp; much more.</p>
+            </div>
+        </div>
+        <div class="disco">
+            <h2>Discover a world of roomie possibilities</h2>
+            <button id="wait1">Join App Wait List</button>
+        </div>
+
+        <div id="popupCard" class="popup-card">
+            <div class="popup-content">
+                <span id="closePopup" class="close-button">&times;</span>
+                <h2>Waitlist Information</h2>
+                <img src="..//Images/RoomieHubFinalLogo-1.png" alt="RoomieHub Logo">
+
+
+
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Name</label>
+                            <input type="text" class="form-control" id="inputName4" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPhone">Phone</label>
+                        <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Operating Systems</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>IOS</option>
+                                <option>Android</option>
+                            </select>
+                        </div>
+                    </div>
+                    <a><button id="submit">Submit</button></a>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="social">
+            <ul class="socialist">
+                <li><a href=""><i class='fa fa-facebook'
+                            style="color: blue; background-color: transparent; border-radius: 50%;"></i></a></li>
+                <li><a href=""><i class='fa fa-instagram'
+                            style="color: red; background-color: transparent; border-radius: 50%;"></i></a></li>
+                <li><a href=""><i class='fa fa-linkedin'
+                            style="color: blue; background-color: transparent; border-radius: 50%;"></i></a></li>
+                <li><a href=""><i class='fa fa-youtube'
+                            style="color: red; background-color: transparent; border-radius: 50%;"></i></a></li>
+            </ul>
+            <div>
+                © 2024 ROOMIEHUB, LLC.
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("wait").addEventListener('click', pop);
+        document.getElementById("wait1").addEventListener('click', pop);
+
+        function pop() {
+            document.getElementById("popupCard").style.display = "block";
+            document.body.classList.add("dimmed");
+        }
+        document.getElementById("closePopup").addEventListener("click", function () {
+            document.getElementById("popupCard").style.display = "none";
+            document.body.classList.remove("dimmed");
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinks = document.querySelectorAll('.wp-block-navigation a');
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
