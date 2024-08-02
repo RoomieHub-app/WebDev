@@ -27,17 +27,45 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Ensure items stack vertically */
+    justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: var(--background-color); 
+    background-color: var(--background-color);
 }
 
 header img {
+    max-width: 100%;
+    height: auto;
     padding-bottom: 3rem;
-    margin-left: 40%;
-    position: relative;
 }
+
+@media (min-width: 1024px) {
+    header img {
+        padding-bottom: 2rem;
+        left: 40vw;
+        position: relative;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header img {
+        padding-bottom: 2rem;
+        left: 10vw;
+        position: relative;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        padding-bottom: 1rem;
+    }
+}
+
+
+
+
 
 .intro {
     display: flex;
